@@ -1,12 +1,9 @@
 ﻿using System;
 namespace lab2_1
 {
-	public class MatrixOperations
+	public partial class MyMatrix
 	{
-		public MatrixOperations()
-		{
-
-		}
+		
 	}
 }
 
