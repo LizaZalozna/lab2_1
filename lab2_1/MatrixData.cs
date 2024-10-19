@@ -7,12 +7,12 @@ namespace lab2_1
 
         public MyMatrix(MyMatrix previousMatrix)
         {
-            matrix = previousMatrix.matrix;
+            matrix = (double[,])previousMatrix.matrix.Clone();
         }
 
         public MyMatrix(double[,] array)
         {
-            matrix = array;
+            matrix = (double[,])array.Clone();
         }
 
         public MyMatrix(double[][] jaggedArray)
