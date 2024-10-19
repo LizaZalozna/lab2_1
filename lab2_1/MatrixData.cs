@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 namespace lab2_1
 {
     public partial class MyMatrix
@@ -108,6 +109,21 @@ namespace lab2_1
             if (value <= double.MaxValue && value >= double.MinValue)
                 matrix[i, j] = value;
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder("");
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    sb.Append($"{matrix[i, j]}/t");
+                }
+                sb.Append("/n");
+            }
+            return sb.ToString();
+        }
+           
     }
 }
 
