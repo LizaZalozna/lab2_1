@@ -6,6 +6,9 @@ namespace lab2_1
     {
         private double[,] matrix;
 
+        private MyMatrix()
+        {}
+
         public MyMatrix(MyMatrix previousMatrix)
         {
             matrix = (double[,])previousMatrix.matrix.Clone();
@@ -123,7 +126,6 @@ namespace lab2_1
             }
             return sb.ToString();
         }
-           
     }
 }
 
