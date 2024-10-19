@@ -58,7 +58,56 @@ namespace lab2_1
             //new MyMatrix(row.Split("\n", StringSplitOptions.RemoveEmptyEntries));
         }
 
+        public int Heigth
+        {
+            get
+            {
+                return matrix.GetLength(0);
+            }
+        }
 
+        public int Width
+        {
+            get
+            {
+                return matrix.GetLength(1);
+            }
+        }
+
+        public int getHeight()
+        {
+            return matrix.GetLength(0);
+        }
+
+
+        public int getWidth()
+        {
+            return matrix.GetLength(1);
+        }
+
+        public double this[int i, int j]
+        {
+            get
+            {
+                return this.matrix[i, j];
+            }
+            set
+            {
+                if (value <= double.MaxValue && value >= double.MinValue)
+                    this.matrix[i, j] = value;
+            }
+        }
+
+        public double getElement(int i, int j)
+        {
+            return matrix[i, j];
+        }
+
+        public void setElement(int i, int j, double value)
+        {
+            if (value <= double.MaxValue && value >= double.MinValue)
+                matrix[i, j] = value;
+        }
     }
 }
 
