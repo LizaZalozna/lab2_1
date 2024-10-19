@@ -53,9 +53,9 @@ namespace lab2_1
              }*/
         }
 
-        public MyMatrix(string row)
+        public MyMatrix(string row) : this(row.Split("\n", StringSplitOptions.RemoveEmptyEntries))
         {
-            new MyMatrix(row.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries));
+            //new MyMatrix(row.Split("\n", StringSplitOptions.RemoveEmptyEntries));
         }
 
 
