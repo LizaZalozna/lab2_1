@@ -120,9 +120,9 @@ namespace lab2_1
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    sb.Append($"{matrix[i, j]}/t");
+                    sb.Append($"{matrix[i, j]}\t");
                 }
-                sb.Append("/n");
+                sb.Append("\n");
             }
             return sb.ToString();
         }

@@ -26,7 +26,7 @@ namespace lab2_1
             if (m1.getWidth() == m2.getHeight())
             {
                 MyMatrix res = new MyMatrix();
-                res.matrix = new double[m1.getWidth(), m2.getHeight()];
+                res.matrix = new double[m1.getHeight(), m2.getWidth()];
                 for (int i = 0; i < m1.getHeight(); i++)
                 {
                     for (int j = 0; j < m2.getWidth(); j++)
@@ -43,27 +43,27 @@ namespace lab2_1
             throw new Exception("Impossible.");
         }
 
-        private double[,] GetTransponedArray()
+        private double[,] GetTransponedArray(MyMatrix matrix)
         {
-            double[,] transp = new double[matrix.GetLength(1), matrix.GetLength(0)];
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            double[,] transp = new double[matrix.getWidth(), matrix.getHeight()];
+            for (int i = 0; i < matrix.getWidth(); i++)
             {
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.getHeight(); j++)
                 {
-                    transp[j, i] = matrix[i, j];
+                    transp[i, j]= matrix[j, i];
                 }
             }
             return transp;
         }
 
-        private MyMatrix GetTransponedCopy()
+        private MyMatrix GetTransponedCopy(MyMatrix matrix)
         {
-            return new MyMatrix(GetTransponedCopy());
+            return new MyMatrix(GetTransponedCopy(matrix));
         }
 
         public void TransponeMe()
         {
-            this.matrix = GetTransponedArray();
+             this.matrix = GetTransponedArray(this);
         }
     }
 }
