@@ -42,6 +42,29 @@ namespace lab2_1
             }
             throw new Exception("Impossible.");
         }
+
+        private double[,] GetTransponedArray()
+        {
+            double[,] transp = new double[matrix.GetLength(1), matrix.GetLength(0)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    transp[j, i] = matrix[i, j];
+                }
+            }
+            return transp;
+        }
+
+        private MyMatrix GetTransponedCopy()
+        {
+            return new MyMatrix(GetTransponedCopy());
+        }
+
+        public void TransponeMe()
+        {
+            this.matrix = GetTransponedArray();
+        }
     }
 }
 
